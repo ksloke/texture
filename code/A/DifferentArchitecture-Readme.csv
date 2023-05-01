@@ -1,0 +1,19 @@
+Name,Inputs,quantize level,Feature,Architecture,batch,Epoch,Accuracy,,code,,array,,,RBG,77.2
+RGB,,,,,,120,73.5,,,,,,,H7,83
+,rgb ,16,3,"separableConvx3, DenseX2",64,100,74.3,,train_img_separable.py,,img.npy,,,RGB-H21,85
+,,,,,,104,77.2,,,,,,,H42 ,89.3
+RGBH7,H7,16,7,"conv2D x 3, DenseX2",50,100,83,,train-glcm.py,,glcm-i,,,H21,89.7
+,"rgb, H21",16,"3,21","Separate input, max pooling removed in H21",64,100,85,,train-glcm-3.py,img.npy,glcm-ii.npy,,,H21S,90.4
+RGBH21,,,,,64,200,89.3,,,,,,,RGBH7S,92.3
+RGBH21,H42,16,42,"conv2D x 3, DenseX2",64,150,89.3,,,,glcm-2a,,,RGBH7S,92.3
+H21S,H21,16,21,"conv2D x 3, DenseX2",64,150,89.7,,,,glcm-ii.npy,,,RGBH21S-64,93
+,,,,,,150,90.1,,,,,,,RGBH21S,95.6
+,,,,,,180,90.1,,,,,,,,
+H42S,H21,16,21,"separableConvx3, DenseX2",64,130,90.4,,train-glcm-2.py,,glcm-ii.npy,,,,
+,H42,16,42,"separableConvx3, DenseX2",64,150,90.4,,train-glcm-2.py,,glcm-2a,,,,
+RGB-H21,rgb + H7 ,16,10,"separableConvx3, DenseX2",64,150,91.5,,train_glcm_i_separable.py,colab,glcm-i,,,,
+,,,,,,162,91.5,,,,,,,,
+H7,,,,,,191,91.9,,,,,,,,
+H21,rgb + H21,64,24,"separableConvx3, DenseX2",64,235,93,,train_glcm_i21_separable.py,,glcm-i21-64L.npy,,,,
+,rgb + H21,16,24,"separableConvx3, DenseX2",64,138,95.6,,train_glcm_i21_separable.py,,glcm-i21-64L.npy,,,,
+H42,,,,,,,,,,,,,,,
